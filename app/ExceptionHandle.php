@@ -21,6 +21,11 @@ class ExceptionHandle extends Handle
      * @var array
      */
     protected $ignoreReport = [
+        HttpException::class,
+        HttpResponseException::class,
+        ModelNotFoundException::class,
+        DataNotFoundException::class,
+        ValidateException::class,
     ];
 
     /**
