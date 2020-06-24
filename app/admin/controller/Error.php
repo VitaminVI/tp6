@@ -5,6 +5,6 @@ class Error
 {
     public function __call($name, $arguments)
     {
-        return miss('控制器不存在');
+        return miss();
     }
 }

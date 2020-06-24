@@ -2,21 +2,23 @@
 // +----------------------------------------------------------------------
 // | ThinkPHP [ WE CAN DO IT JUST THINK ]
 // +----------------------------------------------------------------------
-// | Copyright (c) 2006~2018 http://thinkphp.cn All rights reserved.
+// | Copyright (c) 2006-2019 http://thinkphp.cn All rights reserved.
 // +----------------------------------------------------------------------
 // | Licensed ( http://www.apache.org/licenses/LICENSE-2.0 )
 // +----------------------------------------------------------------------
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
-use think\facade\Route;
 
-Route::get('think', function () {
-    return 'hello,ThinkPHP6!';
-});
+// [ 应用入口文件 ]
+namespace think;
 
-Route::get('hello/:name', 'index/hello');
+require __DIR__ . '/../vendor/autoload.php';
 
-//当路由规则都不匹配的话，会路由到`miss`
-Route::miss(function() {
-    return miss();
-});
+// 执行HTTP应用并响应
+$http = (new App())->http;
+
+$response = $http->name('admin')->run();
+
+$response->send();
+
+$http->end($response);
