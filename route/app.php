@@ -15,3 +15,8 @@ Route::get('think', function () {
 });
 
 Route::get('hello/:name', 'index/hello');
+
+//当路由规则都不匹配的话，会路由到`miss`
+Route::miss(function() {
+    return miss('应用不存在');
+});
