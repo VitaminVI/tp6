@@ -7,7 +7,7 @@ return [
     // 默认日志记录通道
     'default'      => env('log.channel', 'file'),
     // 日志记录级别
-    'level'        => [],
+    'level'        => ['error', 'alert'],
     // 日志类型记录的通道 ['error'=>'email',...]
     'type_channel' => [],
     // 关闭全局日志写入
@@ -29,7 +29,7 @@ return [
             // 最大日志文件数量
             'max_files'      => 0,
             // 使用JSON格式记录
-            'json'           => false,
+            'json'           => true,
             // 日志处理
             'processor'      => null,
             // 关闭通道日志写入
@@ -38,6 +38,9 @@ return [
             'format'         => '[%s][%s] %s',
             // 是否实时写入
             'realtime_write' => false,
+
+            //自定义时间显示格式
+            'time_format'   =>    'Y-m-d H:i:s',
         ],
         // 其它日志通道配置
     ],
