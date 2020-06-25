@@ -94,6 +94,6 @@ abstract class BaseController
     //方法不存在，会运行
     public function __call($name, $arguments)
     {
-        return miss();
+        return miss('方法不存在');
     }
 }

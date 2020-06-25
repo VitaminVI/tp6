@@ -4,7 +4,7 @@
   "data": {
     "homeInfo": {
       "title": "控制台",
-      "href": "/admin/index/dashboard"
+      "href": "/admin/dashboard"
     },
     "logoInfo": {
       "title": "LAYUI MINI",

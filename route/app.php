@@ -17,6 +17,7 @@ Route::get('think', function () {
 Route::get('hello/:name', 'index/hello');
 
 //当路由规则都不匹配的话，会路由到`miss`
+//写在这里针对的是模块不存在,写在应用的route里针对的是路由不存在
 Route::miss(function() {
-    return miss();
+    return miss('模块不存在');
 });
